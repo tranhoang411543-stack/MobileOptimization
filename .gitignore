@@ -1,0 +1,34 @@
+# Tệp và thư mục không đưa lên repository.
+/AGENTS.md
+/Prompt NotebookLM - App 2 Paging.md
+/Prompt NotebookLM - App 3 Cache và Room.md
+/Prompt NotebookLM - Mở đầu và Search with Debounce.md
+/Báo cáo/
+/Biometric/
+/Phôt/
+/Photo Picker/
+
+# Cấu hình máy, dữ liệu nhạy cảm và tệp được tạo khi phát triển.
+**/local.properties
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.sample
+**/.local-tls/
+**/secrets.properties
+**/google-services.json
+**/service-account*.json
+*.key
+*.keystore
+*.jks
+*.p12
+*.pfx
+**/node_modules/
+**/dist/
+**/coverage/
+**/.gradle/
+**/.kotlin/
+**/.idea/
+**/build/
+*.iml
+*.log

@@ -1,0 +1,37 @@
+{
+  "name": "mobile-optimization-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend local dùng chung cho các ứng dụng demo tối ưu Android",
+  "scripts": {
+    "start": "node -r ts-node/register src/main.ts",
+    "build": "tsc -p tsconfig.json",
+    "test:e2e": "node --test test/search.e2e.cjs",
+    "test:connections": "node --test test/connection.e2e.cjs",
+    "test:timing": "node --test test/request-timing.test.cjs",
+    "test:paging": "node --test test/paging.e2e.cjs",
+    "test:console": "node --test test/console-commands.test.cjs",
+    "test:images": "node --test test/image-demo.e2e.cjs",
+    "test:file-demo": "node --test test/file-demo.e2e.cjs",
+    "test:app3-sync": "node --test test/app3-sync.e2e.cjs",
+    "test:transport-demo": "node test/run-transport-demo.cjs",
+    "test:transport-android": "node test/run-transport-android.cjs",
+    "test:app6-notes": "node --test test/app6-notes.e2e.cjs"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/platform-express": "^11.0.0",
+    "pg": "^8.16.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "ws": "8.21.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/pg": "^8.15.0",
+    "@types/ws": "8.18.1",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.9.3"
+  }
+}

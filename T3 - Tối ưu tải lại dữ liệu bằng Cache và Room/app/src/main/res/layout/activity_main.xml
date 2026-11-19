@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootContainer"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/white" android:clipToPadding="true">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="@color/background" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginEnd="8dp" android:minHeight="40dp"
+                    android:gravity="center_vertical" android:fontFamily="sans-serif-medium"
+                    android:text="Reload with Cache &amp; Room" android:textColor="@color/ink" android:textSize="24sp" />
+                <ImageButton android:id="@+id/resetMetrics" android:layout_width="40dp"
+                    android:layout_height="40dp" android:background="@drawable/button_outline"
+                    android:contentDescription="Xóa số đo" android:foreground="?android:attr/selectableItemBackground"
+                    android:minWidth="0dp" android:minHeight="0dp" android:padding="8dp"
+                    android:scaleType="centerInside" android:src="@drawable/ic_refresh" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" android:orientation="horizontal">
+                <LinearLayout android:id="@+id/offCard" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1" android:clickable="true"
+                    android:focusable="true" android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="vertical" android:padding="16dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium" android:text="TẮT TỐI ƯU"
+                        android:textColor="@color/warning" android:textSize="16sp" />
+                    <TextView android:id="@+id/offMetrics" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:layout_marginTop="8dp"
+                        android:textColor="@color/ink" android:textSize="12sp" />
+                </LinearLayout>
+                <Space android:layout_width="16dp" android:layout_height="1dp" />
+                <LinearLayout android:id="@+id/onCard" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1" android:clickable="true"
+                    android:focusable="true" android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="vertical" android:padding="16dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium" android:text="BẬT TỐI ƯU"
+                        android:textColor="@color/success" android:textSize="16sp" />
+                    <TextView android:id="@+id/onMetrics" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:layout_marginTop="8dp"
+                        android:textColor="@color/ink" android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" android:background="@drawable/surface"
+                android:orientation="vertical" android:padding="16dp">
+                <Switch android:id="@+id/optimizationSwitch" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:minHeight="0dp"
+                    android:text="Bật/Tắt tối ưu Cache" android:textColor="@color/ink"
+                    android:textSize="16sp" android:textStyle="bold" />
+                <Button android:id="@+id/openCatalog" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginTop="16dp"
+                    android:background="@drawable/button_primary"
+                    android:foreground="?android:attr/selectableItemBackground" android:gravity="center"
+                    android:minWidth="0dp" android:minHeight="40dp"
+                    android:paddingStart="16dp" android:paddingTop="0dp"
+                    android:paddingEnd="16dp" android:paddingBottom="0dp"
+                    android:text="Mở danh mục" android:textAllCaps="false"
+                    android:textColor="@color/white" android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" android:fontFamily="sans-serif-medium"
+                android:text="Dữ liệu lưu trong Room" android:textColor="@color/ink" android:textSize="16sp" />
+            <TextView android:id="@+id/cacheInfo" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="16dp"
+                android:background="@drawable/surface" android:padding="16dp"
+                android:text="Đang kiểm tra cache…" android:textColor="@color/ink" android:textSize="12sp" />
+            <Button android:id="@+id/clearCache" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="8dp" android:minHeight="40dp"
+                android:background="@drawable/button_outline" android:text="Xóa cache Room"
+                android:textAllCaps="false" android:textColor="@color/ink" android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

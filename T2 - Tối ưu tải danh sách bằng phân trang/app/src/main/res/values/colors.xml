@@ -1,0 +1,12 @@
+<resources>
+    <color name="background">#F3F5FA</color>
+    <color name="ink">#152238</color>
+    <color name="muted">#526174</color>
+    <color name="indigo">#3658D4</color>
+    <color name="pagination_outline">#404040</color>
+    <color name="pagination_disabled">#E0E0E0</color>
+    <color name="white">#FFFFFF</color>
+    <color name="success">#087A62</color>
+    <color name="warning">#A34C12</color>
+    <color name="error">#AE3535</color>
+</resources>

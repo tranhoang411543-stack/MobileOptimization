@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F5FA">
+
+    <LinearLayout
+        android:id="@+id/listScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Secure Note"
+            android:textColor="#152238"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/showCreateButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_primary"
+            android:gravity="center"
+            android:minHeight="40dp"
+            android:padding="0dp"
+            android:text="Tạo ghi chú"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/noteCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:accessibilityLiveRegion="polite"
+            android:fontFamily="sans-serif-medium"
+            android:text="Ghi chú (—)"
+            android:textColor="#152238"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/listStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:accessibilityLiveRegion="polite"
+            android:gravity="center"
+            android:textColor="#485A75"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/noteRows"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+                <Button
+                    android:id="@+id/loadMoreButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/button_outline"
+                    android:text="Tải thêm ghi chú"
+                    android:textAllCaps="false"
+                    android:textColor="#3157D4"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/createScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/backButton"
+                    android:layout_width="24sp"
+                    android:layout_height="24sp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Quay lại màn hình chính"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_previous" />
+                <TextView
+                    android:id="@+id/editorTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Tạo ghi chú"
+                    android:textColor="#152238"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/noteTitle"
+                android:text="Tên ghi chú"
+                android:textColor="#152238"
+                android:textSize="16sp" />
+            <EditText
+                android:id="@+id/noteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/input_field"
+                android:hint="Nhập tên ghi chú"
+                android:importantForAutofill="no"
+                android:inputType="textCapSentences"
+                android:maxLength="120"
+                android:minHeight="48dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="0dp"
+                android:saveEnabled="false"
+                android:textColor="#152238"
+                android:textColorHint="#687C9A"
+                android:textSize="16sp" />
+
+            <Switch
+                android:id="@+id/encryptionSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:minHeight="0dp"
+                android:text="Bật mã hóa AES-GCM"
+                android:textColor="#152238"
+                android:textSize="16sp" />
+
+            <Switch
+                android:id="@+id/captureProtectionSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checked="true"
+                android:minHeight="48dp"
+                android:saveEnabled="false"
+                android:text="Bảo vệ khi chụp màn hình"
+                android:textColor="#152238"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/noteInput"
+                android:text="Nội dung ghi chú"
+                android:textColor="#152238"
+                android:textSize="16sp" />
+            <EditText
+                android:id="@+id/noteInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/input_field"
+                android:gravity="top|start"
+                android:hint="Nhập nội dung ghi chú"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine|textCapSentences|textNoSuggestions"
+                android:maxLength="10000"
+                android:minLines="6"
+                android:maxLines="6"
+                android:padding="16dp"
+                android:saveEnabled="false"
+                android:scrollbars="vertical"
+                android:textColor="#152238"
+                android:textColorHint="#687C9A" />
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button_primary"
+                android:text="Tạo ghi chú"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

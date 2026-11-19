@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootContainer" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFFFFF">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:background="#F3F5FA">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:layout_marginEnd="8dp" android:minHeight="40dp" android:gravity="center_vertical"
+                    android:text="HTTP vs HTTPS" android:textSize="24sp" android:textColor="#152238" android:fontFamily="sans-serif-medium" />
+                <ImageButton android:id="@+id/resetButton" android:layout_width="40dp" android:layout_height="40dp"
+                    android:background="@drawable/button_outline" android:contentDescription="Làm lại phép đo"
+                    android:foreground="?android:attr/selectableItemBackground" android:minWidth="0dp" android:minHeight="0dp"
+                    android:padding="8dp" android:scaleType="centerInside" android:src="@drawable/ic_refresh" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="horizontal">
+                <LinearLayout android:id="@+id/httpCard" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+                    android:background="@drawable/surface" android:padding="16dp" android:minHeight="144dp" android:orientation="vertical" android:clickable="true" android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="HTTP" android:textColor="#A34C12" android:textSize="16sp" android:fontFamily="sans-serif-medium" />
+                    <TextView android:id="@+id/httpMetrics" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="#152238" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/httpsCard" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="16dp"
+                    android:background="@drawable/surface" android:padding="16dp" android:minHeight="144dp" android:orientation="vertical" android:clickable="true" android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="HTTPS" android:textColor="#087A62" android:textSize="16sp" android:fontFamily="sans-serif-medium" />
+                    <TextView android:id="@+id/httpsMetrics" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="#152238" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp"
+                android:background="@drawable/surface" android:orientation="vertical" android:padding="16dp">
+                <Switch android:id="@+id/httpsSwitch" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Bật/Tắt bảo vệ HTTPS" android:textSize="16sp" android:textStyle="bold" android:textColor="#152238" />
+                <Switch android:id="@+id/certificateSwitch" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" android:text="Dùng chứng chỉ không tin cậy"
+                    android:textSize="14sp" android:textColor="#152238" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp"
+                    android:text="Dữ liệu đăng nhập" android:textSize="16sp" android:textStyle="bold" android:textColor="#152238" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp"
+                    android:labelFor="@+id/usernameInput" android:text="Username" android:textSize="16sp" android:textColor="#152238" />
+                <EditText android:id="@id/usernameInput" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:minHeight="48dp" android:hint="Nhập Username" android:inputType="textNoSuggestions"
+                    android:imeOptions="actionNext" android:maxLength="100" android:importantForAutofill="no"
+                    android:background="@drawable/input_field" android:paddingStart="16dp" android:paddingEnd="16dp"
+                    android:paddingTop="0dp" android:paddingBottom="0dp" android:gravity="center_vertical"
+                    android:textSize="16sp" android:textColor="#152238" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp"
+                    android:labelFor="@+id/passwordInput" android:text="Password" android:textSize="16sp" android:textColor="#152238" />
+                <EditText android:id="@id/passwordInput" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:minHeight="48dp" android:hint="Nhập Password" android:inputType="textPassword"
+                    android:imeOptions="actionDone" android:maxLength="128" android:importantForAutofill="no"
+                    android:background="@drawable/input_field" android:paddingStart="16dp" android:paddingEnd="16dp"
+                    android:paddingTop="0dp" android:paddingBottom="0dp" android:gravity="center_vertical"
+                    android:textSize="16sp" android:textColor="#152238" />
+                <Button android:id="@+id/sendButton" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="16dp"
+                    android:background="@drawable/button_primary" android:text="Gửi dữ liệu giả lập" android:textAllCaps="false" android:textSize="16sp" android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

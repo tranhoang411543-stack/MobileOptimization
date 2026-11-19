@@ -1,0 +1,25 @@
+name: mobile-optimization
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: mobile_optimization
+      POSTGRES_USER: mobile_demo
+      # Chỉ dùng cho dữ liệu mẫu trên máy local, không dùng cho production.
+      POSTGRES_PASSWORD: mobile_demo_local
+    ports:
+      - "127.0.0.1:5549:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/001_initial.sql:/docker-entrypoint-initdb.d/001_initial.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U mobile_demo -d mobile_optimization"]
+      interval: 2s
+      timeout: 3s
+      retries: 45
+      start_period: 5s
+
+volumes:
+  postgres_data:

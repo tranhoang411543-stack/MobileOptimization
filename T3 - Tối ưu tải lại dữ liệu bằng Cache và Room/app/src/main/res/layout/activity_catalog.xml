@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootContainer" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/white" android:clipToPadding="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="@color/background" android:orientation="vertical" android:padding="16dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:gravity="center_vertical" android:orientation="horizontal">
+            <ImageButton android:id="@+id/backButton" android:layout_width="40dp"
+                android:layout_height="40dp" android:background="@drawable/button_outline"
+                android:contentDescription="Quay lại" android:foreground="?android:attr/selectableItemBackground"
+                android:minWidth="0dp" android:minHeight="0dp" android:padding="8dp"
+                android:scaleType="centerInside" android:src="@drawable/ic_back" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_marginStart="8dp" android:layout_weight="1" android:fontFamily="sans-serif-medium"
+                android:text="Danh mục sách" android:textColor="@color/ink" android:textSize="24sp" />
+            <ImageButton android:id="@+id/refreshCatalog" android:layout_width="40dp"
+                android:layout_height="40dp" android:background="@drawable/button_outline"
+                android:contentDescription="Làm mới dữ liệu từ server"
+                android:foreground="?android:attr/selectableItemBackground" android:minWidth="0dp"
+                android:minHeight="0dp" android:padding="8dp" android:scaleType="centerInside"
+                android:src="@drawable/ic_refresh" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" android:background="@drawable/surface"
+            android:orientation="vertical" android:padding="16dp">
+            <TextView android:id="@+id/sourceText" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="Nguồn: Đang tải…"
+                android:textColor="@color/ink" android:textSize="16sp" android:textStyle="bold" />
+            <TextView android:id="@+id/updatedText" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="4dp"
+                android:text="Cập nhật lần cuối: —" android:textColor="@color/muted" android:textSize="12sp" />
+            <TextView android:id="@+id/statusText" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="8dp"
+                android:accessibilityLiveRegion="polite" android:text="Đang chuẩn bị…"
+                android:textColor="@color/muted" android:textSize="14sp" android:visibility="gone" />
+            <TextView android:id="@+id/syncText" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="8dp"
+                android:accessibilityLiveRegion="polite" android:text="Đồng bộ: Đang chuẩn bị…"
+                android:textColor="@color/muted" android:textSize="12sp" android:visibility="gone" />
+        </LinearLayout>
+        <TextView android:id="@+id/booksHeading" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium" android:text="Danh sách sách"
+            android:textColor="@color/ink" android:textSize="16sp" />
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_marginTop="16dp" android:layout_weight="1">
+            <ListView android:id="@+id/catalogList" android:layout_width="match_parent"
+                android:layout_height="match_parent" android:clipToPadding="false"
+                android:divider="@null" android:dividerHeight="0dp" />
+            <TextView android:id="@+id/emptyText" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:background="@drawable/surface"
+                android:padding="16dp" android:text="Đang tải danh sách…"
+                android:textColor="@color/muted" android:textSize="14sp" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>
