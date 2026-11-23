@@ -7,6 +7,8 @@
 /Biometric/
 /Phôt/
 /Photo Picker/
+*.docx
+*.doc
 
 # Cấu hình máy, dữ liệu nhạy cảm và tệp được tạo khi phát triển.
 **/local.properties
