@@ -33,7 +33,7 @@ Kiểm thử (không cần emulator): `gradlew testDebugUnitTest`. Bộ test ki�
 - Coil tự hủy request khi composable bị dispose, không cần quản lý lifecycle thủ công.
 
 **Điểm cần lưu ý:**
-- T4.1 dùng Compose nên APK debug lớn hơn T4 (~11 MB vs ~2.6 MB), nhưng APK release với R8 nhỏ hơn nhiều (~1.2 MB so với T4 không R8 ~1.82 MB).
+- T4.1 dùng Compose, Coil và OkHttp nên APK lớn hơn T4: bản debug 10,0 MiB so với 0,87 MiB; bản release dù đã bật R8 vẫn 1,14 MiB so với 654 KiB của T4 (không R8).
 - Coil có memory/disk cache, nên so sánh công bằng cần đo **lần tải đầu tiên** (chưa cache) vs T4. Lần tải sau do cache nên nhanh hơn, nhưng đây là tính năng của Coil, không phải so sánh 1:1 với T4.
 - Chế độ tắt tối ưu của T4.1 vẫn giải mã thủ công bằng `BitmapFactory` (không dùng Coil) để có baseline giống T4.
 
@@ -47,10 +47,10 @@ Kiểm thử (không cần emulator): `gradlew testDebugUnitTest`. Bộ test ki�
 |---|---|---|
 | Dòng mã Kotlin (không tính dòng trống, chú thích, test) | 599 | 552 |
 | Dòng XML layout | 84 | 0 |
-| APK debug | ~2,6 MiB | 11,0 MiB |
-| APK release (T4 không R8, T4.1 có R8) | ~1,82 MiB | **1,2 MiB** |
+| APK debug | 0,87 MiB | 10,0 MiB |
+| APK release (T4 không R8, T4.1 có R8) | 654 KiB | 1,14 MiB |
 
-T4.1 dùng Compose nên APK debug lớn hơn, nhưng bản release với R8 **nhỏ hơn** T4 không R8.
+Dù bật R8, bản release của T4.1 vẫn lớn hơn T4 khoảng 1,7 lần vì phải kèm Compose, Coil và OkHttp. Đây là chi phí cần nêu khi đánh giá.
 
 ## Lưu ý
 
